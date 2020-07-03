@@ -1,6 +1,6 @@
 import random
 
-def fun():
+def Lunh_algo():
     while True:
         val = random.randint(4000000000000000, 4000009999999999)
         y = list(str(val))
@@ -22,7 +22,7 @@ def fun():
         else:
             continue
 
-def fun_verify(val):
+def card_verify(val):
     v = val
     y = list(str(v))
     total = 0
@@ -46,7 +46,7 @@ class CreditCard:
     accout_number = 0
     pin = 0
     def __init__(self):
-        self.account_number = fun()
+        self.account_number = Lunh_algo()
         self.pin = f"{random.randint(0000, 9999):04}"
         self.balance = 0
 
@@ -69,7 +69,7 @@ Your card PIN:
     elif choice == "2":
         card_number = input("Enter your card number:")
         pin_number = input("Enter your PIN:")
-        res = fun_verify(card_number)
+        res = card_verify(card_number)
         if res == "no" and card_number != credit_card.account_number or pin_number != credit_card.pin:
             print("Wrong card number or PIN!")
         else:
